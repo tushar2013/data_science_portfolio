@@ -1,0 +1,13 @@
+---
+- single: 'parent --> child'
+- multiple: 
+  - 'parent_a --> child'
+  - 'parent_b --> child'
+- multilevel: 
+  - 'parent_a --> parent_b --> child'
+- hierarchical:
+  - parent: 
+    - child_a
+    - child_b
+    - child_c
+- hybrid: mix of any two or more of above
