@@ -1,10 +1,16 @@
 ---
-- single: 'parent --> child'
+- single: 
+  - parent: 
+    - child
 - multiple: 
-  - 'parent_a --> child'
-  - 'parent_b --> child'
+  - parent_a: 
+    - child
+  - parent_b: 
+    - child
 - multilevel: 
-  - 'parent_a --> parent_b --> child'
+  - parent_a:
+    - parent_b: 
+      - child
 - hierarchical:
   - parent: 
     - child_a
