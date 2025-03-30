@@ -46,7 +46,7 @@ def predict_stock(df, future_days=10):
         return None, None
 
     df['Days'] = (df['Date'] - df['Date'].min()).dt.days
-    X = df[['Days']]
+    X = df[['Open', 'High', 'Low']]
     y = df['Close']
 
     # Splitting into training and testing sets
@@ -63,11 +63,22 @@ def predict_stock(df, future_days=10):
     mse = mean_squared_error(y_test, y_pred)
     r2 = r2_score(y_test, y_pred)
 
-    # Future Predictions
+    # Future Dates
     future_dates = [(df['Date'].max() + datetime.timedelta(days=i)) for i in range(1, future_days + 1)]
-    future_df = pd.DataFrame({'Date': future_dates})
-    future_df['Days'] = (future_df['Date'] - df['Date'].min()).dt.days
-    future_df['Predicted'] = model.predict(future_df[['Days']])
+
+    # Simulate future 'Open', 'High', and 'Low' values
+    # Using the mean of the last 5 days as future values
+    avg_open = df['Open'].tail(5).mean()
+    avg_high = df['High'].tail(5).mean()
+    avg_low = df['Low'].tail(5).mean()
+
+    future_df = pd.DataFrame({
+        'Date': future_dates,
+        'Open': [avg_open] * future_days,
+        'High': [avg_high] * future_days,
+        'Low': [avg_low] * future_days
+    })
+    future_df['Predicted'] = model.predict(future_df[['Open', 'High', 'Low']])
 
     return mse, r2, future_df
 
