@@ -1,2 +1,2 @@
-# intellipaat
-this repo is for my intellipaat data science course
+contains data science projects
+location: /home/neo/coding_playground/intellipaat/data_science_portfolio
