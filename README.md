@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚀 **Data Science Project Portfolio**
 
 Welcome to my **Data Science Project Portfolio** repository! 🎓 This repo showcases a collection of **data science projects** that demonstrate my skills in **data analysis, machine learning, visualization, and end-to-end model deployment**. Each project contains:
@@ -27,3 +28,8 @@ Welcome to my **Data Science Project Portfolio** repository! 🎓 This repo show
  ┣ 📄 README.md               → Portfolio overview
  ┗ 📄 LICENSE.md              → License information
 
+=======
+contains data science projects
+
+location: /home/neo/coding_playground/intellipaat/data_science_portfolio
+>>>>>>> 76fb1f453dded319e49ba7c145420d6a795cfc32
